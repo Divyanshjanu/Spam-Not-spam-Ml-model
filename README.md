@@ -1,6 +1,6 @@
 #  Spam Detection API 
 
-A real-time Spam Detection API using XGBoost, built with FastAPI and containerized using Docker. This project simulates a **risk modeling task**, where input text is classified as **spam** or **ham**. It includes model evaluation, API performance monitoring, input validation, and is fully deployable to a cloud platform.
+A real-time Spam Detection API using XGBoost and logistic regression, built with FastAPI and containerized using Docker. This project simulates a **risk modeling task**, where input text is classified as **spam** or **ham**. It includes model evaluation, API performance monitoring, input validation, and is fully deployable to a cloud platform.
 
 # Live Demo
 
@@ -25,7 +25,7 @@ This project simulates a Risk Modeling machine learning use case. The API takes 
 
 - Selected Task: Risk Modeling (Spam Classification)
 - Model Used: XGBoost Classifier and Logistic regression
-- Reason: Robust with tabular data, handles imbalance, great performance
+- Reason: Robust with tabular data, handles imbalance, and has great performance
 - Dataset: Public spam message dataset taken from kaggle (https://www.kaggle.com/datasets/bagavathypriya/spam-ham-dataset/data)
 - Preprocessing: TF-IDF Vectorization + StandardScaler
 
@@ -35,7 +35,7 @@ This project simulates a Risk Modeling machine learning use case. The API takes 
 
 - Target Users: Email services, text classifiers, internal IT filters
 - Expected Daily Requests: 500 - 1000
-- User Requirements:**
+- User Requirements:
   - Real-time response (< 500ms per request)
   - Lightweight response in JSON format
   - Simple POST endpoint for integration
