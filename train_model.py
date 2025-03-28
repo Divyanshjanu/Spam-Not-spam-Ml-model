@@ -8,7 +8,7 @@ from xgboost import XGBClassifier
 # Load dataset
 df = pd.read_csv("spam.csv", encoding="latin-1")
 df.rename(columns={'v1': 'SPAM/HAM', 'v2': 'Text'}, inplace=True)
-df = df[['SPAM/HAM', 'Text']]  # Keep only relevant columns
+df = df[['SPAM/HAM', 'Text']]  
 
 # Define X and y
 X = df['Text']
