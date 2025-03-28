@@ -127,23 +127,35 @@ docker run -p 8000:8000 spam-detector-api
 ----------------------------------
 Diagram
                 [ User / Client ]
+                
                       |
+                      
                       v
+                      
             POST /predict with {"text": "..."}
+            
                       |
+                      
                       v
+                      
             ┌───────────────────────────────┐
             │         FastAPI App           │
             │      (main.py / app instance) │
             └───────────────────────────────┘
+            
                       |
+                      
         ┌─────────────┼────────────────────┐
+        
         ▼             ▼                    ▼
  [Vectorizer.pkl] [Scaler.pkl]   [Spam_Model.pkl]
     (TF-IDF)      (StandardScaler)  (XGBoost)
 
+
                       |
+                      
                       ▼
+                      
            [ Prediction Result + Metrics ]
            (spam/ham, probability, time, memory)
 
