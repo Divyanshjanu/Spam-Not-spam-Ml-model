@@ -125,8 +125,30 @@ docker run -p 8000:8000 spam-detector-api
 - Real-time filtering in SMS apps
 
 ----------------------------------
+Diagram
+                [ User / Client ]
+                      |
+                      v
+            POST /predict with {"text": "..."}
+                      |
+                      v
+            ┌───────────────────────────────┐
+            │         FastAPI App           │
+            │      (main.py / app instance) │
+            └───────────────────────────────┘
+                      |
+        ┌─────────────┼────────────────────┐
+        ▼             ▼                    ▼
+ [Vectorizer.pkl] [Scaler.pkl]   [Spam_Model.pkl]
+    (TF-IDF)      (StandardScaler)  (XGBoost)
 
-## Author
+                      |
+                      ▼
+           [ Prediction Result + Metrics ]
+           (spam/ham, probability, time, memory)
+
+--------------------------------------------
+# Author
 
 Divyansh Janu  
 Docker Hub(divyanshjanu/spam_model) | LinkedIn(www.linkedin.com/in/divyansh-janu-91446a25b) | Docker image[docker pull divyanshjanu/spam_model:1.0]
