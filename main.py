@@ -26,7 +26,7 @@ class SpamRequest(BaseModel):
 def get_memory_usage():
     process = psutil.Process()
     memory_info = process.memory_info()
-    memory_usage_in_mb = memory_info.rss / 1024 / 1024  #
+    memory_usage_in_mb = memory_info.rss / 1024 / 1024  
     return round(memory_usage_in_mb, 2)
 
 @app.get("/")
