@@ -30,8 +30,8 @@ model = XGBClassifier(n_estimators=100, learning_rate=0.1, max_depth=5)
 model.fit(X_train, y_train)
 
 # Save the model, vectorizer, and scaler
-joblib.dump(model, 'spam_model.pkl')
-joblib.dump(vectorizer, 'vectorizer.pkl')
-joblib.dump(scaler, 'scaler.pkl')
+joblib.dump(model, 'spam_model.pkl')              #save the trained model for further use
+joblib.dump(vectorizer, 'vectorizer.pkl')         #learn vocubalary annd save their
+joblib.dump(scaler, 'scaler.pkl')                 #trained on scaled data and saved
 
 print("Model, vectorizer, and scaler saved successfully!")
